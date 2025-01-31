@@ -1,0 +1,51 @@
+.sc-product-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.sc-product-item {
+    width: 19%;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.sc-product-image {
+    position: relative;
+}
+.sc-sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.sc-discount {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    background: #ff4d4d;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.sc-product-title {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.sc-price {
+    font-size: 16px;
+}
+.sc-regular-price {
+    text-decoration: line-through;
+    color: #999;
+}
+.sc-sale-price {
+    color: red;
+    font-weight: bold;
+}
