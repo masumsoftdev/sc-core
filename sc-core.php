@@ -35,7 +35,7 @@ function sc_product_grid_shortcode($atts) {
 
     $args = array(
         'post_type'      => 'product',
-        'posts_per_page' => 5, 
+        'posts_per_page' => -1, 
         'tax_query'      => array(
             array(
                 'taxonomy' => 'product_cat',
@@ -62,7 +62,7 @@ function sc_product_grid_shortcode($atts) {
                         <?php the_post_thumbnail('medium'); ?>
                         <?php if ($product->is_on_sale()) : ?>
                             <span class="sc-sale-badge">SALE!</span>
-                            <span class="sc-discount"><?php echo round(100 - ($product->get_sale_price() / $product->get_regular_price() * 100)); ?>%</span>
+                            <span class="sc-discount-badge"><?php echo round(100 - ($product->get_sale_price() / $product->get_regular_price() * 100)); ?>%</span>
                         <?php endif; ?>
                     </div>
                     <h3 class="sc-product-title"><?php the_title(); ?></h3>
@@ -82,8 +82,9 @@ add_shortcode('sc_product_grid', 'sc_product_grid_shortcode');
 
 // Enqueue CSS
 function sc_core_enqueue_styles() {
-    wp_enqueue_style('sc-core-styles', plugin_dir_url(__FILE__) . 'assets/sc-core.css');
+    wp_enqueue_style('sc-core-styles', plugin_dir_url(__FILE__) . 'assets/sc-core.css', array(), time());
 }
 add_action('wp_enqueue_scripts', 'sc_core_enqueue_styles');
+
 
 
